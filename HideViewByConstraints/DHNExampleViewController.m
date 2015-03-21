@@ -18,7 +18,7 @@
 @implementation DHNExampleViewController
 
 - (IBAction)hideHorizontalAction:(id)sender {
-    [self.viewToHide hideByHeight:!self.viewToHide.hidden];
+    [self.viewToHide hideHorizontal:!self.viewToHide.hidden];
     
     if (self.viewToHide.hidden) {
         [sender setTitle:@"ShowHorizontal" forState:UIControlStateNormal];
@@ -28,7 +28,7 @@
 }
 
 - (IBAction)hideVerticalAction:(UIButton *)sender {
-    [self.viewToHide hideByWidth:!self.viewToHide.hidden];
+    [self.viewToHide hideVertical:!self.viewToHide.hidden];
     
     if (self.viewToHide.hidden) {
         [sender setTitle:@"ShowVertical" forState:UIControlStateNormal];

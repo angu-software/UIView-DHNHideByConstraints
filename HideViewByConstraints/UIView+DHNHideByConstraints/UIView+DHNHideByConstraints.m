@@ -24,41 +24,64 @@
     
 }
 
-#pragma mark -
-
-- (void)hideByWidth:(BOOL)hide
+- (NSArray *)horizontalConstraintAttributes
 {
-    [self hide:hide bySizeAttribute:NSLayoutAttributeWidth];
+    return @[@(NSLayoutAttributeWidth),
+             @(NSLayoutAttributeLeading),
+             @(NSLayoutAttributeTrailing),
+             @(NSLayoutAttributeLeft),
+             @(NSLayoutAttributeRight)];
 }
 
-- (void)hideByHeight:(BOOL)hide
+- (NSArray *)verticalConstraintAttributes
 {
-    [self hide:hide bySizeAttribute:NSLayoutAttributeHeight];
+    return @[@(NSLayoutAttributeHeight),
+             @(NSLayoutAttributeTop),
+             @(NSLayoutAttributeBottom)];
 }
 
 #pragma mark -
 
-- (void)hide:(BOOL)hide bySizeAttribute:(NSLayoutAttribute)attribute
+- (void)hideHorizontal:(BOOL)hide
+{
+    [self hide:hide byAttributes:[self horizontalConstraintAttributes]];
+}
+
+- (void)hideVertical:(BOOL)hide
+{
+    [self hide:hide byAttributes:[self verticalConstraintAttributes]];
+}
+
+#pragma mark -
+
+- (void)hide:(BOOL)hide byAttributes:(NSArray *)attributes
 {
     if (self.hidden == hide) {
         return;
     }
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstItem = %@ && firstAttribute == %d", self, attribute];
-    NSLayoutConstraint *heightConstraint = [self.constraints filteredArrayUsingPredicate:predicate].firstObject;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(firstItem = %@ || secondItem = %@) && firstAttribute IN %@", self, self, attributes];
+    NSArray *constraints = [self.constraints filteredArrayUsingPredicate:predicate];
     
-    NSString *consraintKey = [NSString stringWithFormat:@"%p",heightConstraint];
-    CGFloat constantValue = NAN;
-    if (hide) {
-        self.stateStorage[consraintKey] = @(heightConstraint.constant);
-        constantValue = 0;
-    } else {
-        if (self.stateStorage[consraintKey]) {
-            constantValue = [self.stateStorage[consraintKey] floatValue];
-            [self.stateStorage removeObjectForKey:consraintKey];
+    [constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        NSString *consraintKey = [NSString stringWithFormat:@"%p",constraint];
+        CGFloat constantValue = NAN;
+        if (hide) {
+            self.stateStorage[consraintKey] = @(constraint.constant);
+            constantValue = 0;
+        } else {
+            if (self.stateStorage[consraintKey]) {
+                constantValue = [self.stateStorage[consraintKey] floatValue];
+                [self.stateStorage removeObjectForKey:consraintKey];
+            }
         }
-    }
-    heightConstraint.constant = constantValue;
+        constraint.constant = constantValue;
+    }];
+    
+    [self.subviews enumerateObjectsUsingBlock:^(UIView *subView, NSUInteger idx, BOOL *stop) {
+        [subView hide:hide byAttributes:attributes];
+    }];
+    
     self.hidden = hide;
 }
 

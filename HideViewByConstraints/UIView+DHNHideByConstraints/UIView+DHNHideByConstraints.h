@@ -10,7 +10,7 @@
 
 @interface UIView (DHNHideByConstraints)
 
-- (void)hideByWidth:(BOOL)hide;
-- (void)hideByHeight:(BOOL)hide;
+- (void)hideHorizontal:(BOOL)hide;
+- (void)hideVertical:(BOOL)hide;
 
 @end
