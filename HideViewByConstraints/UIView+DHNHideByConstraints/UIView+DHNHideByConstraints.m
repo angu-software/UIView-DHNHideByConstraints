@@ -30,14 +30,18 @@
              @(NSLayoutAttributeLeading),
              @(NSLayoutAttributeTrailing),
              @(NSLayoutAttributeLeft),
-             @(NSLayoutAttributeRight)];
+             @(NSLayoutAttributeRight),
+             @(NSLayoutAttributeTrailingMargin),
+             @(NSLayoutAttributeLeadingMargin)];
 }
 
 - (NSArray *)verticalConstraintAttributes
 {
     return @[@(NSLayoutAttributeHeight),
              @(NSLayoutAttributeTop),
-             @(NSLayoutAttributeBottom)];
+             @(NSLayoutAttributeBottom),
+             @(NSLayoutAttributeTopMargin),
+             @(NSLayoutAttributeBottomMargin)];
 }
 
 #pragma mark -
@@ -60,29 +64,33 @@
         return;
     }
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(firstItem = %@ || secondItem = %@) && firstAttribute IN %@", self, self, attributes];
-    NSArray *constraints = [self.constraints filteredArrayUsingPredicate:predicate];
-    
-    [constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
-        NSString *consraintKey = [NSString stringWithFormat:@"%p",constraint];
-        CGFloat constantValue = NAN;
-        if (hide) {
-            self.stateStorage[consraintKey] = @(constraint.constant);
-            constantValue = 0;
-        } else {
-            if (self.stateStorage[consraintKey]) {
-                constantValue = [self.stateStorage[consraintKey] floatValue];
-                [self.stateStorage removeObjectForKey:consraintKey];
-            }
-        }
-        constraint.constant = constantValue;
-    }];
-    
     [self.subviews enumerateObjectsUsingBlock:^(UIView *subView, NSUInteger idx, BOOL *stop) {
         [subView hide:hide byAttributes:attributes];
     }];
     
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstAttribute IN %@", attributes];
+    NSArray *constraints = [self.constraints filteredArrayUsingPredicate:predicate];
+    
+    [constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
+        NSString *constraintKey = [NSString stringWithFormat:@"%p",constraint];
+        CGFloat constantValue = NAN;
+        if (hide) {
+            self.stateStorage[constraintKey] = @(constraint.constant);
+            constantValue = 0;
+        } else {
+            if (self.stateStorage[constraintKey]) {
+                constantValue = [self.stateStorage[constraintKey] floatValue];
+                [self.stateStorage removeObjectForKey:constraintKey];
+            }
+        }
+        if (!isnan(constantValue)) {
+            constraint.constant = constantValue;
+        }
+
+    }];
+
     self.hidden = hide;
+
 }
 
 @end
