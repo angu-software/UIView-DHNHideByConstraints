@@ -60,7 +60,7 @@
         [subView hide:hide byAttributes:attributes];
     }];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstAttribute IN %@", attributes];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstAttribute IN %@ && self.class == %@", attributes, [NSLayoutConstraint class]];
     NSArray *constraints = [self.constraints filteredArrayUsingPredicate:predicate];
     
     [constraints enumerateObjectsUsingBlock: ^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
