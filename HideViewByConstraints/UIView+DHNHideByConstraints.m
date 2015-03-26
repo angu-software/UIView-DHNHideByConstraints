@@ -56,6 +56,11 @@
         return;
     }
     
+    if (self.constraints.count == 0) {
+        [self setNeedsUpdateConstraints];
+        [self updateConstraintsIfNeeded];
+    }
+    
     [self.subviews enumerateObjectsUsingBlock: ^(UIView *subView, NSUInteger idx, BOOL *stop) {
         [subView hide:hide byAttributes:attributes];
     }];
