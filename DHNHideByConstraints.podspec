@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DHNHideByConstraints"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Hiding Views by compressing its constraints"
 
   s.description  = "Hiding views will keep its visual space on its superview. This category enables also hiding the views consuming space on its superview."
@@ -60,7 +60,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/ACodeG/UIView-DHNHideByConstraints.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/ACodeG/UIView-DHNHideByConstraints.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

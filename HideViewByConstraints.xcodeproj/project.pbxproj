@@ -15,7 +15,7 @@
 		E181788A1ABB6DCC00C833A4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E18178881ABB6DCC00C833A4 /* LaunchScreen.xib */; };
 		E18178961ABB6DCC00C833A4 /* HideViewByConstraintsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E18178951ABB6DCC00C833A4 /* HideViewByConstraintsTests.m */; };
 		E18178A51ABB73DA00C833A4 /* DHNExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18178A41ABB73DA00C833A4 /* DHNExampleViewController.m */; };
-		E18178AA1ABB761B00C833A4 /* UIView+DHNHideByConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = E18178A91ABB761B00C833A4 /* UIView+DHNHideByConstraints.m */; };
+		E1D910601AC1B28500759F05 /* UIView+DHNHideByConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D9105F1AC1B28500759F05 /* UIView+DHNHideByConstraints.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,8 @@
 		E18178951ABB6DCC00C833A4 /* HideViewByConstraintsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HideViewByConstraintsTests.m; sourceTree = "<group>"; };
 		E18178A31ABB73DA00C833A4 /* DHNExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHNExampleViewController.h; sourceTree = "<group>"; };
 		E18178A41ABB73DA00C833A4 /* DHNExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHNExampleViewController.m; sourceTree = "<group>"; };
-		E18178A81ABB761B00C833A4 /* UIView+DHNHideByConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DHNHideByConstraints.h"; sourceTree = "<group>"; };
-		E18178A91ABB761B00C833A4 /* UIView+DHNHideByConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DHNHideByConstraints.m"; sourceTree = "<group>"; };
+		E1D9105E1AC1B28500759F05 /* UIView+DHNHideByConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+DHNHideByConstraints.h"; path = "HideViewByConstraints/UIView+DHNHideByConstraints.h"; sourceTree = SOURCE_ROOT; };
+		E1D9105F1AC1B28500759F05 /* UIView+DHNHideByConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+DHNHideByConstraints.m"; path = "HideViewByConstraints/UIView+DHNHideByConstraints.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +131,8 @@
 		E18178A71ABB761B00C833A4 /* UIView+DHNHideByConstraints */ = {
 			isa = PBXGroup;
 			children = (
-				E18178A81ABB761B00C833A4 /* UIView+DHNHideByConstraints.h */,
-				E18178A91ABB761B00C833A4 /* UIView+DHNHideByConstraints.m */,
+				E1D9105E1AC1B28500759F05 /* UIView+DHNHideByConstraints.h */,
+				E1D9105F1AC1B28500759F05 /* UIView+DHNHideByConstraints.m */,
 			);
 			path = "UIView+DHNHideByConstraints";
 			sourceTree = "<group>";
@@ -239,9 +239,9 @@
 			files = (
 				E18178821ABB6DCC00C833A4 /* ViewController.m in Sources */,
 				E18178A51ABB73DA00C833A4 /* DHNExampleViewController.m in Sources */,
+				E1D910601AC1B28500759F05 /* UIView+DHNHideByConstraints.m in Sources */,
 				E181787F1ABB6DCC00C833A4 /* AppDelegate.m in Sources */,
 				E181787C1ABB6DCC00C833A4 /* main.m in Sources */,
-				E18178AA1ABB761B00C833A4 /* UIView+DHNHideByConstraints.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +432,7 @@
 				E181789B1ABB6DCC00C833A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E181789C1ABB6DCC00C833A4 /* Build configuration list for PBXNativeTarget "HideViewByConstraintsTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +441,7 @@
 				E181789E1ABB6DCC00C833A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
