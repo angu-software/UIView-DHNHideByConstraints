@@ -1,6 +1,6 @@
 # UIView+DHNHideByConstraints
 
-This category on UIView hides views and its consuming vertical or horizontal space in the view hierarcy. This also affects the views subviews.
+This category on UIView hides views and its consuming vertical or horizontal space in the view hierarchy. This also affects the views subviews.
 
 # How to use
 
@@ -8,7 +8,7 @@ This category on UIView hides views and its consuming vertical or horizontal spa
 
 You can install this category by using cocoapods or manually copy the source files to your project.
 
-To install with cocoapods siply add this line to yout Podfile.
+To install with cocoapods simply add this line to yout Podfile.
 
 ```
 pod 'DHNHideByConstraints', :git =>'https://github.com/dreyhomedev/UIView-DHNHideByConstraints.git'
@@ -40,5 +40,5 @@ To use this category simply import the ```UIView+DHNHideByConstraints.h``` and c
 
 ## Limitations
 
-When using this ategory make shure you do not alter the content of the views (and its subviews) when hidden. This can cause unenxpected effects on the view layout, especial on UILabel, UIButton ect.
-If you must change the content of the hidden view unhide it first, change its content and hide again.
+When using this category make sure you do not alter the content of the views (and its subviews) when hidden. This can cause unexpected effects on the views layout, especial on UILabel, UIButton ect.
+If you must change the content of the hidden view, unhide it first, change its content and hide again.
