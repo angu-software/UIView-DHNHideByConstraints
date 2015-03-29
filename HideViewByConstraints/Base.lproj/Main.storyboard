@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="coW-iQ-Nox">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="coW-iQ-Nox">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -58,8 +58,8 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S56-Le-Cha" userLabel="BottomView">
-                                        <rect key="frame" x="201" y="303" width="166" height="144"/>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="303" width="568" height="144"/>
+                                        <color key="backgroundColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMZ-2J-AWm" userLabel="RightView">
                                         <rect key="frame" x="367" y="145" width="201" height="158"/>
@@ -67,10 +67,10 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqo-Qf-8zr" userLabel="LeftView">
                                         <rect key="frame" x="0.0" y="145" width="201" height="158"/>
-                                        <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Np0-Jw-wFt" userLabel="TopView">
-                                        <rect key="frame" x="201" y="0.0" width="166" height="145"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="145"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
@@ -78,23 +78,35 @@
                                 <constraints>
                                     <constraint firstItem="sqo-Qf-8zr" firstAttribute="centerY" secondItem="zcg-ON-Sck" secondAttribute="centerY" id="683-UN-tQK"/>
                                     <constraint firstItem="S56-Le-Cha" firstAttribute="centerX" secondItem="zcg-ON-Sck" secondAttribute="centerX" id="979-pB-EB3"/>
+                                    <constraint firstItem="zMZ-2J-AWm" firstAttribute="top" secondItem="Np0-Jw-wFt" secondAttribute="bottom" id="ATx-uL-YB3"/>
                                     <constraint firstItem="zcg-ON-Sck" firstAttribute="leading" secondItem="sqo-Qf-8zr" secondAttribute="trailing" id="BX2-NM-lc0"/>
                                     <constraint firstItem="zMZ-2J-AWm" firstAttribute="centerY" secondItem="zcg-ON-Sck" secondAttribute="centerY" id="CYp-E1-hlA"/>
+                                    <constraint firstItem="sqo-Qf-8zr" firstAttribute="top" secondItem="Np0-Jw-wFt" secondAttribute="bottom" id="Gmz-20-1ec"/>
                                     <constraint firstItem="sqo-Qf-8zr" firstAttribute="height" secondItem="zcg-ON-Sck" secondAttribute="height" id="Ilz-7C-TgF"/>
                                     <constraint firstItem="zcg-ON-Sck" firstAttribute="width" secondItem="Np0-Jw-wFt" secondAttribute="width" id="Inr-jk-iJ9"/>
                                     <constraint firstItem="S56-Le-Cha" firstAttribute="top" secondItem="zcg-ON-Sck" secondAttribute="bottom" id="Lac-Ka-RSY"/>
                                     <constraint firstItem="zcg-ON-Sck" firstAttribute="centerX" secondItem="Np0-Jw-wFt" secondAttribute="centerX" id="TbP-vE-CLp"/>
                                     <constraint firstItem="zMZ-2J-AWm" firstAttribute="leading" secondItem="zcg-ON-Sck" secondAttribute="trailing" id="Tf5-Lr-Jcu"/>
+                                    <constraint firstAttribute="trailing" secondItem="S56-Le-Cha" secondAttribute="trailing" id="Vws-IN-ZsC"/>
                                     <constraint firstAttribute="bottom" secondItem="S56-Le-Cha" secondAttribute="bottom" id="aDO-LO-pe7"/>
+                                    <constraint firstItem="S56-Le-Cha" firstAttribute="top" secondItem="zMZ-2J-AWm" secondAttribute="bottom" id="ah0-LB-uLk"/>
                                     <constraint firstItem="sqo-Qf-8zr" firstAttribute="leading" secondItem="FFS-fb-fvp" secondAttribute="leading" id="bQQ-CB-Z0U"/>
                                     <constraint firstAttribute="trailing" secondItem="zMZ-2J-AWm" secondAttribute="trailing" id="jK1-qK-nVm"/>
-                                    <constraint firstItem="zMZ-2J-AWm" firstAttribute="height" secondItem="zcg-ON-Sck" secondAttribute="height" id="k9b-7f-QCS"/>
+                                    <constraint firstItem="Np0-Jw-wFt" firstAttribute="leading" secondItem="FFS-fb-fvp" secondAttribute="leading" id="kvk-5a-KX7"/>
                                     <constraint firstItem="Np0-Jw-wFt" firstAttribute="top" secondItem="FFS-fb-fvp" secondAttribute="top" id="l6R-Ek-BPC"/>
+                                    <constraint firstItem="S56-Le-Cha" firstAttribute="top" secondItem="sqo-Qf-8zr" secondAttribute="bottom" id="mSJ-i3-2NA"/>
                                     <constraint firstAttribute="centerY" secondItem="zcg-ON-Sck" secondAttribute="centerY" id="ncQ-aw-gGy"/>
                                     <constraint firstAttribute="centerX" secondItem="zcg-ON-Sck" secondAttribute="centerX" id="oZs-mC-u1s"/>
-                                    <constraint firstItem="S56-Le-Cha" firstAttribute="width" secondItem="zcg-ON-Sck" secondAttribute="width" id="sjj-yL-dy6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Np0-Jw-wFt" secondAttribute="trailing" id="ueM-uj-l3i"/>
                                     <constraint firstItem="zcg-ON-Sck" firstAttribute="top" secondItem="Np0-Jw-wFt" secondAttribute="bottom" id="vr5-pA-N6A"/>
+                                    <constraint firstItem="S56-Le-Cha" firstAttribute="leading" secondItem="FFS-fb-fvp" secondAttribute="leading" id="zKw-on-sGP"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ilz-7C-TgF"/>
+                                        <exclude reference="Inr-jk-iJ9"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-6i-j7f" userLabel="ButtonContainer">
                                 <rect key="frame" x="16" y="467" width="568" height="84"/>

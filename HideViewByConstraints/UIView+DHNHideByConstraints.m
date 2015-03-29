@@ -1,5 +1,5 @@
 //
-//  UIVibrancyEffect+DHNHideByConstraints.m
+//  UIView+DHNHideByConstraints.m
 //  HideViewByConstraints
 //
 //  Created by Andreas on 19.03.15.
